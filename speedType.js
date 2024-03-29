@@ -122,7 +122,10 @@ function countdown() {
 // check game status function
 function checkStatus() {
   if (!isPlaying && time === 0) {
-    message.innerHTML = "Game is Over!!!";
+    message.innerHTML = "Game Over!!!";
+    message.className = "text-danger";
+    currentWord.textContent = "....";
+
     score = -1;
   }
 }
