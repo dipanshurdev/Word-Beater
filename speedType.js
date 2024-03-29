@@ -1,8 +1,8 @@
 // Levels
 const levels = {
-  easy: 5,
-  medium: 3,
-  hard: 2,
+  easy: 8,
+  medium: 5,
+  hard: 3,
 };
 // change levels
 const currentLevel = levels.easy;
@@ -13,7 +13,6 @@ let score = 0;
 let isPlaying;
 
 // DOM Elements
-
 const wordInput = document.querySelector("#input");
 const currentWord = document.querySelector("#current-word");
 const scoreDisplay = document.querySelector("#score");
