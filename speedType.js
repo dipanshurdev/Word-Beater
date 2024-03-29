@@ -5,7 +5,7 @@ const levels = {
   hard: 3,
 };
 // change levels
-const currentLevel = levels.easy;
+const currentLevel = 5;
 
 // Global Veriables
 let time = currentLevel;
@@ -70,6 +70,7 @@ function initialize() {
   // check game status
   setInterval(checkStatus, 500);
 }
+console.log({ time, score, isPlaying });
 
 // start match function
 function startMatch() {
