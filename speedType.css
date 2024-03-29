@@ -1,3 +1,9 @@
 body {
-    font-family: 'Lora', serif;
+  font-family: "Lora", serif;
+}
+
+#seconds,
+#time,
+#score {
+  color: rgb(3, 80, 151);
 }
