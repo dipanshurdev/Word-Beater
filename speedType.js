@@ -1,6 +1,6 @@
 // Levels
 const levels = {
-  easy: 8,
+  easy: 5,
   medium: 5,
   hard: 3,
 };
