@@ -59,6 +59,7 @@ const words = [
 
 // initializing game
 function initialize() {
+  startBtn.style.display = "none";
   // show numbers of seconds in UI
   seconds.innerHTML = currentLevel;
   // Load word form Game
