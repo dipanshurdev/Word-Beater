@@ -23,6 +23,7 @@ const btnEasy = document.querySelector(".easy");
 const btnMedium = document.querySelector(".easy");
 const btnHard = document.querySelector(".hard");
 const startBtn = document.getElementById("start-btn");
+const replay = document.querySelector("#replay-btn");
 
 // Start Button
 startBtn.addEventListener("click", initialize);
@@ -125,7 +126,9 @@ function checkStatus() {
     message.innerHTML = "Game Over!!!";
     message.className = "text-danger";
     currentWord.textContent = "....";
-
-    score = -1;
+    startBtn.classList.remove("d-none");
+    startBtn.classList.add("d-block");
+    // score = -1;
+    return;
   }
 }
