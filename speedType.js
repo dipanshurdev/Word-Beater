@@ -24,6 +24,7 @@ const btnMedium = document.querySelector(".easy");
 const btnHard = document.querySelector(".hard");
 const startBtn = document.getElementById("start-btn");
 const replay = document.querySelector("#replay-btn");
+const modal = document.querySelector(".result-modal");
 
 // Start Button
 startBtn.addEventListener("click", initialize);
@@ -128,6 +129,9 @@ function checkStatus() {
     currentWord.textContent = "....";
     startBtn.classList.remove("d-none");
     startBtn.classList.add("d-block");
+    modal.classList.remove("d-none");
+    modal.classList.add("d-block");
+
     // score = -1;
     return;
   }
