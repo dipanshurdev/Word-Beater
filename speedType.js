@@ -25,7 +25,7 @@ const btnMedium = document.querySelector(".easy");
 const btnHard = document.querySelector(".hard");
 const startBtn = document.getElementById("start-btn");
 const replay = document.querySelector("#replay-btn");
-const modal = document.querySelector(".result-modal");
+const modal = document.querySelector(".result-modal-container");
 const reset = document.querySelector("#reset");
 
 // EventListeners
