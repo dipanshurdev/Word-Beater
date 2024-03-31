@@ -1,18 +1,10 @@
 // Levels
-// const levels = {
-//   easy: 7,
-//   medium: 5,
-//   hard: 3,
-// };
 const levels = [
   { name: "easy", value: 7 },
   { name: "medium", value: 5 },
   { name: "hard", value: 3 },
 ];
 
-// console.log(levels.easy);
-
-// console.log(levels[0].value);
 // change levels
 let currentLevel = levels[0].value;
 
@@ -163,14 +155,6 @@ function resetfn() {
   window.location.reload();
 }
 
-// Change Level
-function changeLevel(level) {
-  currentLevel = levels.level;
-  time = currentLevel;
-  seconds.innerHTML = currentLevel;
-  message.innerHTML = "Good Luck!";
-  message.className = "text-success";
-}
 function changeLevel(level) {
   currentLevel = levels[level].value;
   time = currentLevel;
