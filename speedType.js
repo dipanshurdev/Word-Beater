@@ -5,7 +5,7 @@ const levels = {
   hard: 3,
 };
 // change levels
-const currentLevel = 5;
+const currentLevel = levels.easy;
 
 // Global Veriables
 let time = currentLevel;
