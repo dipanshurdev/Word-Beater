@@ -43,9 +43,9 @@ const hard = document.querySelector("#hard");
 // Some EventListeners
 startBtn.addEventListener("click", initialize);
 reset.addEventListener("click", resetfn);
-easy.addEventListener("click", changeLevel(0));
-medium.addEventListener("click", changeLevel(1));
-hard.addEventListener("click", changeLevel(2));
+easy.addEventListener("click", () => changeLevel(0));
+medium.addEventListener("click", () => changeLevel(1));
+hard.addEventListener("click", () => changeLevel(2));
 
 // Words Array
 const words = [
@@ -78,7 +78,9 @@ const words = [
 
 // initializing game
 function initialize() {
+  currentLevel = levels[0].value;
   startBtn.style.display = "none";
+  timeDisplay.innerHTML = currentLevel;
   // show numbers of seconds in UI
   seconds.innerHTML = currentLevel;
   // Load word form Game
@@ -173,6 +175,7 @@ function changeLevel(level) {
   currentLevel = levels[level].value;
   time = currentLevel;
   seconds.innerHTML = currentLevel;
-  message.innerHTML = "Good Luck!";
+  message.innerHTML = levels[level].name + " level selected";
   message.className = "text-success";
+  console.log({ level, time, currentLevel, seconds });
 }
