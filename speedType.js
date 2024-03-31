@@ -28,8 +28,10 @@ const replay = document.querySelector("#replay-btn");
 const modal = document.querySelector(".result-modal");
 const reset = document.querySelector("#reset");
 
+// EventListeners
 // Start Button
 startBtn.addEventListener("click", initialize);
+reset.addEventListener("click", startMatch);
 
 // Words Array
 const words = [
@@ -138,12 +140,11 @@ function checkStatus() {
     // score = -1;
     return;
   }
-
-  function reset() {
-    if (score > 0) {
-      modal.classList.add("d-none");
-      score = 0;
-      wordInput.value = "";
-    }
-  }
+}
+function resetfn() {
+  removeEventListener(checkStatus, 500);
+  modal.classList.remove("d-block");
+  modal.classList.add("d-none");
+  score = 0;
+  wordInput.value = "";
 }
