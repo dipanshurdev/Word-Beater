@@ -1,13 +1,20 @@
 // Levels
-const levels = {
-  easy: 5,
-  medium: 5,
-  hard: 3,
-};
+// const levels = {
+//   easy: 7,
+//   medium: 5,
+//   hard: 3,
+// };
+const levels = [
+  { name: "easy", value: 7 },
+  { name: "medium", value: 5 },
+  { name: "hard", value: 3 },
+];
 
-console.log(levels);
+// console.log(levels.easy);
+
+// console.log(levels[0].value);
 // change levels
-const currentLevel = levels.easy;
+let currentLevel = levels[0].value;
 
 // Global Veriables
 let time = currentLevel;
@@ -34,10 +41,11 @@ const medium = document.querySelector("#medium");
 const hard = document.querySelector("#hard");
 
 // Some EventListeners
-// Start Button
 startBtn.addEventListener("click", initialize);
 reset.addEventListener("click", resetfn);
-easy.addEventListener("click", changeLevel());
+easy.addEventListener("click", changeLevel(0));
+medium.addEventListener("click", changeLevel(1));
+hard.addEventListener("click", changeLevel(2));
 
 // Words Array
 const words = [
@@ -155,7 +163,14 @@ function resetfn() {
 
 // Change Level
 function changeLevel(level) {
-  currentLevel = levels;
+  currentLevel = levels.level;
+  time = currentLevel;
+  seconds.innerHTML = currentLevel;
+  message.innerHTML = "Good Luck!";
+  message.className = "text-success";
+}
+function changeLevel(level) {
+  currentLevel = levels[level].value;
   time = currentLevel;
   seconds.innerHTML = currentLevel;
   message.innerHTML = "Good Luck!";
