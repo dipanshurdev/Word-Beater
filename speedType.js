@@ -16,6 +16,7 @@ let isPlaying;
 const wordInput = document.querySelector("#input");
 const currentWord = document.querySelector("#current-word");
 const scoreDisplay = document.querySelector("#score");
+const modalScore = document.querySelector("#modal-score");
 const timeDisplay = document.getElementById("time");
 const message = document.querySelector("#message");
 const seconds = document.querySelector("#seconds");
@@ -25,6 +26,7 @@ const btnHard = document.querySelector(".hard");
 const startBtn = document.getElementById("start-btn");
 const replay = document.querySelector("#replay-btn");
 const modal = document.querySelector(".result-modal");
+const reset = document.querySelector("#reset");
 
 // Start Button
 startBtn.addEventListener("click", initialize);
@@ -131,8 +133,17 @@ function checkStatus() {
     startBtn.classList.add("d-block");
     modal.classList.remove("d-none");
     modal.classList.add("d-block");
-
+    modalScore.textContent = score;
+    console.log({ score, modalScore });
     // score = -1;
     return;
+  }
+
+  function reset() {
+    if (score > 0) {
+      modal.classList.add("d-none");
+      score = 0;
+      wordInput.value = "";
+    }
   }
 }
