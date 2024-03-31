@@ -6,14 +6,15 @@ const levels = [
 ];
 
 // change levels
-let currentLevel = levels[0].value;
+let currentLevel = levels[0];
+let currentTime = currentLevel.value;
 
 // Global Veriables
-let time = currentLevel;
+let time = currentTime;
 let score = 0;
 let isPlaying;
 
-// DOM Elements
+// DOM Elements selections
 const wordInput = document.querySelector("#input");
 const currentWord = document.querySelector("#current-word");
 const scoreDisplay = document.querySelector("#score");
@@ -47,7 +48,7 @@ const words = [
   "generate",
   "stubborn",
   "cocktil",
-  "mokey",
+  "monkey",
   "elephant",
   "establishment",
   "congratulation",
@@ -68,13 +69,18 @@ const words = [
   "javascript",
 ];
 
+// Some Default Values
+message.innerHTML = currentLevel.name + " level";
+timeDisplay.innerHTML = currentTime;
+seconds.innerHTML = currentTime;
+
 // initializing game
 function initialize() {
-  currentLevel = levels[0].value;
+  currentTime = currentLevel.value;
   startBtn.style.display = "none";
-  timeDisplay.innerHTML = currentLevel;
+  timeDisplay.innerHTML = currentTime;
   // show numbers of seconds in UI
-  seconds.innerHTML = currentLevel;
+  seconds.innerHTML = currentTime;
   // Load word form Game
   showWord(words);
   // start mathcing input
@@ -84,13 +90,12 @@ function initialize() {
   // check game status
   setInterval(checkStatus, 500);
 }
-// console.log({ time, score, isPlaying });
 
 // start match function
 function startMatch() {
   if (matchWords()) {
     isPlaying = true;
-    time = currentLevel + 1;
+    time = currentTime + 1;
     showWord(words);
     wordInput.value = "";
     score++;
@@ -155,11 +160,13 @@ function resetfn() {
   window.location.reload();
 }
 
+// Select Levels
 function changeLevel(level) {
-  currentLevel = levels[level].value;
-  time = currentLevel;
-  seconds.innerHTML = currentLevel;
-  message.innerHTML = levels[level].name + " level selected";
+  currentLevel = levels[level];
+  currentTime = currentLevel.value;
+  time = currentTime;
+  timeDisplay.innerHTML = currentTime;
+  seconds.innerHTML = currentTime;
+  message.innerHTML = currentLevel.name + " level";
   message.className = "text-success";
-  console.log({ level, time, currentLevel, seconds });
 }
