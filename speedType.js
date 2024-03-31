@@ -67,6 +67,9 @@ const words = [
   "courage",
   "document",
   "javascript",
+  "object",
+  "engineer",
+  "software",
 ];
 
 // Some Default Values
