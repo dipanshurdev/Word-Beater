@@ -31,7 +31,7 @@ const reset = document.querySelector("#reset");
 // EventListeners
 // Start Button
 startBtn.addEventListener("click", initialize);
-reset.addEventListener("click", startMatch);
+reset.addEventListener("click", resetfn);
 
 // Words Array
 const words = [
@@ -142,9 +142,5 @@ function checkStatus() {
   }
 }
 function resetfn() {
-  removeEventListener(checkStatus, 500);
-  modal.classList.remove("d-block");
-  modal.classList.add("d-none");
-  score = 0;
-  wordInput.value = "";
+  window.location.reload();
 }
