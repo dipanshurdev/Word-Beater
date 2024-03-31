@@ -4,6 +4,8 @@ const levels = {
   medium: 5,
   hard: 3,
 };
+
+console.log(levels);
 // change levels
 const currentLevel = levels.easy;
 
@@ -27,11 +29,15 @@ const startBtn = document.getElementById("start-btn");
 const replay = document.querySelector("#replay-btn");
 const modal = document.querySelector(".result-modal-container");
 const reset = document.querySelector("#reset");
+const easy = document.querySelector("#easy");
+const medium = document.querySelector("#medium");
+const hard = document.querySelector("#hard");
 
-// EventListeners
+// Some EventListeners
 // Start Button
 startBtn.addEventListener("click", initialize);
 reset.addEventListener("click", resetfn);
+easy.addEventListener("click", changeLevel());
 
 // Words Array
 const words = [
@@ -76,7 +82,7 @@ function initialize() {
   // check game status
   setInterval(checkStatus, 500);
 }
-console.log({ time, score, isPlaying });
+// console.log({ time, score, isPlaying });
 
 // start match function
 function startMatch() {
@@ -141,6 +147,17 @@ function checkStatus() {
     return;
   }
 }
+
+// Re-start Function
 function resetfn() {
   window.location.reload();
+}
+
+// Change Level
+function changeLevel(level) {
+  currentLevel = levels;
+  time = currentLevel;
+  seconds.innerHTML = currentLevel;
+  message.innerHTML = "Good Luck!";
+  message.className = "text-success";
 }
