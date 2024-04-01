@@ -77,7 +77,7 @@ message.innerHTML = currentLevel.name + " level";
 timeDisplay.innerHTML = currentTime;
 seconds.innerHTML = currentTime;
 
-// initializing game
+// Initializing game function
 function initialize() {
   currentTime = currentLevel.value;
   startBtn.style.display = "none";
