@@ -103,6 +103,7 @@ function startMatch() {
     wordInput.value = "";
     score++;
   }
+
   // if score is -1 display 0;
   if (score === -1) {
     scoreDisplay.innerHTML = 0;
@@ -111,7 +112,7 @@ function startMatch() {
   }
 }
 
-// match currentWord to wordInput
+// Match currentWord to wordInput
 function matchWords() {
   if (wordInput.value === currentWord.innerHTML) {
     message.innerHTML = "Correct!!!!";
@@ -130,14 +131,14 @@ function showWord(words) {
   currentWord.innerHTML = words[randomIndex];
 }
 
-// countdown timer
+// Countdown timer
 function countdown() {
   if (time > 0) {
     time--;
   } else {
     isPlaying = false;
   }
-  // show time
+  // Show time
   timeDisplay.innerHTML = time;
 }
 
@@ -158,7 +159,7 @@ function checkStatus() {
   }
 }
 
-// Re-start Function
+// Re-start Function (simply reloads the window)
 function resetfn() {
   window.location.reload();
 }
@@ -173,3 +174,5 @@ function changeLevel(level) {
   message.innerHTML = currentLevel.name + " level";
   message.className = "text-success";
 }
+
+console.log("beat the word😼");
